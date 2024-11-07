@@ -393,17 +393,17 @@ export default function GeneralLedger() {
     errortype
   ) => {
     document.getElementById(elementId).innerHTML = `
-            <div class="custom-message">
-              <svg class='alert_icon' xmlns="http://www.w3.org/2000/svg" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.965 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.706c.89 0 1.438-.99.982-1.767L8.982 1.566zm-.982 4.905a.905.905 0 1 1 1.81 0l-.146 3.342a.759.759 0 0 1-1.518 0l-.146-3.342zm.002 6.295a1.057 1.057 0 1 1 2.114 0 1.057 1.057 0 0 1-2.114 0z"/>
-              </svg>
-              ${message} <span style="font-size: 12px; font-weight: bold;">${fromDate}</span> 
-              To <span style="font-size: 12px; font-weight: bold;">${toDate}</span>
-              <button class='alert_button' id="close-btn" onclick="closeAlert('${errortype}')" style="cursor: pointer;">
-                <i class="bi bi-x cross_icon_styling"></i>
-              </button>
-            </div>
-          `;
+		  <div class="custom-message">
+			<svg class='alert_icon' xmlns="http://www.w3.org/2000/svg" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger" fill="currentColor" viewBox="0 0 16 16">
+			  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.965 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.706c.89 0 1.438-.99.982-1.767L8.982 1.566zm-.982 4.905a.905.905 0 1 1 1.81 0l-.146 3.342a.759.759 0 0 1-1.518 0l-.146-3.342zm.002 6.295a1.057 1.057 0 1 1 2.114 0 1.057 1.057 0 0 1-2.114 0z"/>
+			</svg>
+			${message} <span style="font-size: 12px; font-weight: bold;">${fromDate}</span> 
+			To <span style="font-size: 12px; font-weight: bold;">${toDate}</span>
+			<button class='alert_button' id="close-btn" onclick="closeAlert('${errortype}')" style="cursor: pointer;">
+			  <i class="bi bi-x cross_icon_styling"></i>
+			</button>
+		  </div>
+		`;
 
     // Focus the button after it is added to the DOM
     setTimeout(() => {
@@ -497,17 +497,17 @@ export default function GeneralLedger() {
     switch (errorType) {
       case "saleType":
         document.getElementById("someElementId").innerHTML = `
-            <div class="custom-message">
-            <svg class='alert_icon' xmlns="http://www.w3.org/2000/svg" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.965 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.706c.89 0 1.438-.99.982-1.767L8.982 1.566zm-.982 4.905a.905.905 0 1 1 1.81 0l-.146 3.342a.759.759 0 0 1-1.518 0l-.146-3.342zm.002 6.295a1.057 1.057 0 1 1 2.114 0 1.057 1.057 0 0 1-2.114 0z"/>
-                  </svg>
-              <p>Please Select a Account Code</p>
-              <button class='alert_button'  id="close-btn" onclick="closeAlert('saleType')"  cursor: pointer;">
-                 
-                  <i class="bi bi-x  cross_icon_styling"></i>
-              </button>
-          </div>
-            `;
+		  <div class="custom-message">
+		  <svg class='alert_icon' xmlns="http://www.w3.org/2000/svg" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger" fill="currentColor" viewBox="0 0 16 16">
+					<path d="M8.982 1.566a1.13 1.13 0 0 0-1.965 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.706c.89 0 1.438-.99.982-1.767L8.982 1.566zm-.982 4.905a.905.905 0 1 1 1.81 0l-.146 3.342a.759.759 0 0 1-1.518 0l-.146-3.342zm.002 6.295a1.057 1.057 0 1 1 2.114 0 1.057 1.057 0 0 1-2.114 0z"/>
+				</svg>
+            <p>Please Select a Account Code</p>
+            <button class='alert_button'  id="close-btn" onclick="closeAlert('saleType')"  cursor: pointer;">
+               
+				<i class="bi bi-x  cross_icon_styling"></i>
+            </button>
+        </div>
+		  `;
         setTimeout(() => {
           const closeButton = document.getElementById("close-btn");
           if (closeButton) {
@@ -1377,7 +1377,7 @@ export default function GeneralLedger() {
     // height: "100vh",
     width: isSidebarVisible ? "calc(65vw - 0%)" : "65vw",
     position: "relative",
-    top: "40%",
+    top: "35%",
     left: isSidebarVisible ? "50%" : "50%",
     transform: "translate(-50%, -50%)",
     transition: isSidebarVisible
@@ -1949,7 +1949,10 @@ export default function GeneralLedger() {
                             className={
                               selectedIndex === i ? "selected-background" : ""
                             }
-                            style={{ backgroundColor: "#021A33" }}
+                            style={{
+                              backgroundColor: getcolor,
+                              color: fontcolor,
+                            }}
                           >
                             <td className="text-center" style={firstColWidth}>
                               {item.Date}
@@ -2102,8 +2105,8 @@ export default function GeneralLedger() {
               style={{ backgroundColor: "#186DB7", width: "120px" }}
             />
             {/* <button className="reportBtn" id="searchsubmit" ref={input3Ref}  onClick={fetchGeneralLedger}>
-                      Select
-                  </button>{" "} */}
+                    Select
+                </button>{" "} */}
           </div>
         </div>
       </div>
